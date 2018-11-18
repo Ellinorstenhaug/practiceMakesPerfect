@@ -3,26 +3,26 @@
        { 
             "id": 1,
             "name": "Hammer",
-             "price": 10.10,
+            "price": 10.10,
             "category": "Hardware"
         },
         {
             "id": 2,
             "name": "Yo-yo",
-             "price": 59.30,
+            "price": 59.30,
             "category": "Toys"
         },
         {
             "id": 3,
             "name": "Tomato Soup",
-             "price": 90,
+            "price": 90,
             "category": "Groceries"
         },
         {
             "id": 4,
             "name": "Dog",
-             "price": 950,
-            "category": "Pets"
+            "price": 950,
+            "category": "Pets",
         }]
           
 }
