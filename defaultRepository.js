@@ -36,26 +36,28 @@ let defaultRepository = (function(DefaultService) {
       let image = response[i].ImageUrl;
       let Id = response[i].Id;
 
-      let btnModal = `<button class="btn btn-default show-product" value="${Id}" text="text" data-toggle="modal" data-target="#product">Read more</button>`;
+      let imageContainer = {
+        images: []
+      };
+
+      $(response[i].images).each(function(index, value) {
+        imageContainer.images.push(
+          `<img src="${value.ImageUrl}" style="height:50px;width:50px;"/>`
+        );
+      });
+
       let product = `<div class='col-sm-4 product'>
        <h1>${title}</h1> 
        <span>Price: ${Price}$</span>
         <p class="Category">${Category}</p>
         <div style="background:blue;width:300px;" class="image-container">
        <img style="height:auto; width:200px;" src="${image}">
-      </div>
-       
-       ${btnModal}
+       ${imageContainer.images}
+      </div>       
+      <button class="btn btn-default show-product" value="${Id}" text="text" data-toggle="modal" data-target="#product">Read more</button>
        </div>`;
 
       productWrapper.append(product);
-
-      var imgContainer = $(".image-container");
-      $(response[i].images).each(function(index, value) {
-        imgContainer.append(
-          `<img src="${value.ImageUrl}" style="height:50px;width:50px;"/>`
-        );
-      });
     }
 
     initGetProduct();
